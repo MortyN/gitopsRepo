@@ -18,6 +18,12 @@ spec:
       containers:
       - name: networkmon
         image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
+      
+      - name: grafana
+        image: "grafana/grafana"
+
+      - name: prometheus
+        image: "prom/prometheus"
 ---
 apiVersion: v1
 kind: Service
@@ -32,3 +38,31 @@ spec:
   - port: 2112
     targetPort: 2112
     nodePort: 30001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-svc
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    bb: grafana
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 30002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-svc
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    bb: prometheus
+  ports:
+  - port: 9090
+    targetPort: 9090
+    nodePort: 30003

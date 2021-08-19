@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: networkMon-svc
+  name: networkmon-svc
 spec:
   selector:
     app: networkMon

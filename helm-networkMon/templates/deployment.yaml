@@ -22,7 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: networkmon
+  name: networkmon-svc
   namespace: default
 spec:
   type: NodePort

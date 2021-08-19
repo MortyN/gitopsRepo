@@ -30,6 +30,6 @@ spec:
       {{- template "golang.tolerations" . }}
       {{- end }}
       containers:
-        - name: sample-golang-app
+        - name: networkmon
           image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
           imagePullPolicy: {{ .Values.imagePullPolicy }}

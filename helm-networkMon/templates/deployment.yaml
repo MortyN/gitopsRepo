@@ -16,50 +16,14 @@ spec:
         bb: networkmon
     spec:
       containers:
-        - name: networkmon
-          image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
-        
-        - name: grafana
-            image: "grafana/grafana"
-            imagePullPolicy: IfNotPresent
-            ports:
-              - containerPort: 3000
-                name: http-grafana
-                protocol: TCP
-            readinessProbe:
-              failureThreshold: 3
-              httpGet:
-                path: /robots.txt
-                port: 3000
-                scheme: HTTP
-              initialDelaySeconds: 10
-              periodSeconds: 30
-              successThreshold: 1
-              timeoutSeconds: 2
-            livenessProbe:
-              failureThreshold: 3
-              initialDelaySeconds: 30
-              periodSeconds: 10
-              successThreshold: 1
-              tcpSocket:
-                port: 3000
-              timeoutSeconds: 1
-            resources:
-              requests:
-                cpu: 150m
-                memory: 250Mi
-            volumeMounts:
-              - mountPath: /var/lib/grafana
-                name: grafana-pv
+      - name: networkmon
+        image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
+      
+      - name: grafana
+        image: "grafana/grafana"
 
-        - name: prometheus
-          image: "prom/prometheus"
-
-      volumes:
-        - name: grafana-pv
-          persistentVolumeClaim:
-            claimName: grafana-pvc
-
+      - name: prometheus
+        image: "prom/prometheus"
 ---
 apiVersion: v1
 kind: Service
@@ -80,15 +44,15 @@ metadata:
   name: grafana-svc
   namespace: default
 spec:
-  ports:
-    - port: 3000
-      protocol: TCP
-      targetPort: http-grafana
-      nodePort: 32395
-  selector:
-    app: grafana
-  sessionAffinity: None
   type: NodePort
+  selector:
+    bb: grafana
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+    targetPort: http-grafana
+    nodePort: 34395
 ---
 apiVersion: v1
 kind: Service

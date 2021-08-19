@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: networkMon
+      app: networkmon
   template:
     metadata:
       labels:
-        app: networkMon
+        app: networkmon
     spec:
       {{- if .Values.affinity }}
       affinity:

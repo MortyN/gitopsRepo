@@ -20,7 +20,7 @@ spec:
           image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
         
         - name: grafana
-            image: grafana/grafana
+            image: "grafana/grafana"
             imagePullPolicy: IfNotPresent
             ports:
               - containerPort: 3000

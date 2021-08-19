@@ -1,5 +1,5 @@
 replicacount: 1
-imageRepository: mortyn/gomonitor-docker:latest
+imageRepository: mortyn/gomonitor-docker
 imageTag: latest
 imagePullPolicy: Always
 service:

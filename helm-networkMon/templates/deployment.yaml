@@ -52,7 +52,7 @@ spec:
     protocol: TCP
     targetPort: 3000
     targetPort: http-grafana
-    nodePort: 34395
+    nodePort: 32395
 ---
 apiVersion: v1
 kind: Service

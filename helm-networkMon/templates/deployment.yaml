@@ -2,34 +2,33 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: networkmon
+  namespace: default
   labels:
-    chart: "networkMon"
+    chart: "networkmon"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: networkmon
+      bb: networkmon
   template:
     metadata:
       labels:
-        app: networkmon
+        bb: networkmon
     spec:
-      {{- if .Values.affinity }}
-      affinity:
-{{ toYaml .Values.affinity | indent 8 }}
-      {{- end }}
-      {{- if .Values.nodeSelector }}
-      nodeSelector:
-{{ toYaml .Values.nodeSelector | indent 8 }}
-      {{- end }}
-      {{- if .Values.priorityClassName }}
-      priorityClassName: {{ .Values.priorityClassName }}
-      {{- end }}
-      {{- if .Values.tolerations }}
-      tolerations:
-      {{- template "golang.tolerations" . }}
-      {{- end }}
       containers:
-        - name: networkmon
-          image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
-          imagePullPolicy: {{ .Values.imagePullPolicy }}
+      - name: networkmon
+        image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bb-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    bb: web
+  ports:
+  - port: 2112
+    targetPort: 2112
+    nodePort: 30001

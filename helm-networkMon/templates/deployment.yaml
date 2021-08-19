@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: networkMon
+  labels:
+    chart: "networkMon"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: networkMon
+  template:
+    metadata:
+      labels:
+        app: networkMon
+    spec:
+      {{- if .Values.affinity }}
+      affinity:
+{{ toYaml .Values.affinity | indent 8 }}
+      {{- end }}
+      {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+      {{- end }}
+      {{- if .Values.priorityClassName }}
+      priorityClassName: {{ .Values.priorityClassName }}
+      {{- end }}
+      {{- if .Values.tolerations }}
+      tolerations:
+      {{- template "golang.tolerations" . }}
+      {{- end }}
+      containers:
+        - name: sample-golang-app
+          image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
+          imagePullPolicy: {{ .Values.imagePullPolicy }}

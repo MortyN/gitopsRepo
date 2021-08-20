@@ -1339,13 +1339,6 @@ serverFiles:
 
     scrape_configs:
         # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-      - job_name: 'speedtest-golang'
-
-        # Override the global default and scrape targets from this job every 5 seconds.
-        scrape_interval: 5s
-
-        static_configs:
-          - targets: ['localhost:9090']
 
       - job_name: 'gomonitor'
 
@@ -1355,10 +1348,6 @@ serverFiles:
           - targets: ['192.168.49.2:30001']
         metrics_path: /metrics
 
-      - job_name: prometheus
-        static_configs:
-          - targets:
-            - localhost:9090
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)

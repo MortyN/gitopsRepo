@@ -31,3 +31,4 @@ spec:
   ports:
   - port: 2112
     targetPort: 2112
+    nodePort: 30001

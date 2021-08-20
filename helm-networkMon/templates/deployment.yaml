@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: networkmon
-        image: "{{ .Values.imageRepository }}:{{ default "v2.0" .Values.imageTag }}"
+        image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
 ---
 apiVersion: v1
 kind: Service

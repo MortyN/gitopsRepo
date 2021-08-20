@@ -1,33 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: networkmon
+  name: grafana
   namespace: default
   labels:
-    chart: "networkmon"
+    chart: "grafana"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      bb: networkmon
+      bb: grafana
   template:
     metadata:
       labels:
-        bb: networkmon
+        bb: grafana
     spec:
       containers:
-      - name: networkmon
-        image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
+
+      - name: grafana
+        image: "{{ .Values.imageRepository }}"
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: networkmon-svc
+  name: grafana-svc
   namespace: default
 spec:
   type: NodePort
   selector:
-    bb: networkmon
+    bb: grafana
   ports:
-  - port: 2112
-    targetPort: 2112
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+    targetPort: http-grafana
+    nodePort: 32395

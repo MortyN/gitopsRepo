@@ -1,5 +1,5 @@
 replicacount: 1
-imageRepository: mortyn/gomonitor-docker
+imageRepository: prom/prometheus
 imageTag: latest
 imagePullPolicy: Always
 service:
@@ -12,7 +12,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - networkmon-example.local
+    - prometheus-example.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

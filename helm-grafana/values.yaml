@@ -1,5 +1,5 @@
 replicacount: 1
-imageRepository: mortyn/gomonitor-docker
+imageRepository: grafana/grafana
 imageTag: latest
 imagePullPolicy: Always
 service:
@@ -12,7 +12,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - networkmon-example.local
+    - grafana-example.local
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

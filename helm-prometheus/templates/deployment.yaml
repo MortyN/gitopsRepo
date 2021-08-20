@@ -1,33 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: networkmon
+  name: prometheus
   namespace: default
   labels:
-    chart: "networkmon"
+    chart: "prometheus"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      bb: networkmon
+      bb: prometheus
   template:
     metadata:
       labels:
-        bb: networkmon
+        bb: prometheus
     spec:
       containers:
-      - name: networkmon
-        image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
+      - name: prometheus
+        image: "{{ .Values.imageRepository }}"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: networkmon-svc
+  name: prometheus-svc
   namespace: default
 spec:
   type: NodePort
   selector:
-    bb: networkmon
+    bb: prometheus
   ports:
-  - port: 2112
-    targetPort: 2112
+  - port: 9090
+    targetPort: 9090
+    nodePort: 32394

@@ -29,13 +29,13 @@ entries:
     version: 0.1.3
   testchart:
   - apiVersion: v2
-    appVersion: 1.0.24
-    created: "2021-09-20T15:54:44.119581717Z"
+    appVersion: 1.0.25
+    created: "2021-09-20T15:57:26.53966396Z"
     description: A Helm chart for Kubernetes
-    digest: 8ecce4a7770ae952299adac34d24bd7ab362f5b3c3ecefc40fbd3dd79bf0c29f
+    digest: a91bf87834be5259d9f8cd152d47dcef3963697ad21e0e3c2e8b96dc9e3c62ba
     name: testchart
     type: application
     urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/testchart-0.1.2/testchart-0.1.2.tgz
-    version: 0.1.2
+    - https://github.com/MortyN/gitopsRepo/releases/download/testchart-0.1.3/testchart-0.1.3.tgz
+    version: 0.1.3
 generated: "2021-08-28T13:40:48.807197111+02:00"

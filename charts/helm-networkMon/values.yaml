@@ -1,7 +1,12 @@
 replicacount: 1
 imageRepository: mortyn/gomonitor-docker
+<<<<<<< HEAD
 imageTag: latest
 imagePullPolicy: IfNotPresent
+=======
+imageTag: 24
+imagePullPolicy: Always
+>>>>>>> fc06e959054d10a2d448e7891ff3516b043e9171
 service:
   type: ClusterIP
   port: 80

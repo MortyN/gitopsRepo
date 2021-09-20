@@ -8,7 +8,8 @@ image:
   repository: mortyn/gomonitor-docker
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  # should change versioning standard to 1.0.<dockerbuild label>
+  tag: "24"
 
 imagePullSecrets: []
 nameOverride: ""

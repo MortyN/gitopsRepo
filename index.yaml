@@ -22,9 +22,9 @@ entries:
           url: https://hub.docker.com/r/itzg/minecraft-server
     apiVersion: v1
     appVersion: SeeValues
-    created: "2021-09-22T08:58:24.507231402Z"
+    created: "2021-09-22T08:59:40.962894023Z"
     description: Minecraft server
-    digest: 0e025cfd40ed0f2f20bd529929d3dcb51b4d925454f9eaeff098c8159bab43a9
+    digest: f7ffc6ffbb2597816ff3f8054569689d555191346cdf16e9337f8d02a5da0d4d
     home: https://minecraft.net/
     keywords:
     - game
@@ -40,8 +40,8 @@ entries:
     sources:
     - https://github.com/itzg/minecraft-server-charts
     urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/minecraft-3.4.4/minecraft-3.4.4.tgz
-    version: 3.4.4
+    - https://github.com/MortyN/gitopsRepo/releases/download/minecraft-3.4.5/minecraft-3.4.5.tgz
+    version: 3.4.5
   networkmon:
   - apiVersion: v2
     appVersion: 1.5.0
@@ -56,4 +56,4 @@ entries:
     urls:
     - https://mortyn.github.io/gitopsRepo/networkmon-0.1.3.tgz
     version: 0.1.3
-generated: "2021-09-22T08:58:24.507433504Z"
+generated: "2021-09-22T08:59:40.962899823Z"

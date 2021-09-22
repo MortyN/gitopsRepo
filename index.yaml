@@ -22,9 +22,9 @@ entries:
           url: https://hub.docker.com/r/itzg/minecraft-server
     apiVersion: v1
     appVersion: SeeValues
-    created: "2021-09-22T08:34:24.124936559Z"
+    created: "2021-09-22T08:42:28.15143921Z"
     description: Minecraft server
-    digest: 82ab409e9296e711c6272cdf22c81e8b43959a13de8db1873e4b47adf20fc6c5
+    digest: e32554591fa6205a76cc441e4f067756758a54077d7ddcc559454d053dd677eb
     home: https://minecraft.net/
     keywords:
     - game
@@ -40,8 +40,8 @@ entries:
     sources:
     - https://github.com/itzg/minecraft-server-charts
     urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/minecraft-3.4.2/minecraft-3.4.2.tgz
-    version: 3.4.2
+    - https://github.com/MortyN/gitopsRepo/releases/download/minecraft-3.4.3/minecraft-3.4.3.tgz
+    version: 3.4.3
   networkmon:
   - apiVersion: v2
     appVersion: 1.5.0
@@ -56,4 +56,15 @@ entries:
     urls:
     - https://mortyn.github.io/gitopsRepo/networkmon-0.1.3.tgz
     version: 0.1.3
-generated: "2021-08-28T13:40:48.807197111+02:00"
+  testchart:
+  - apiVersion: v2
+    appVersion: 1.0.27
+    created: "2021-09-22T08:42:28.363358353Z"
+    description: A Helm chart for Kubernetes
+    digest: 8d76ceb2f6e5631f615224fb4ea9795b28c3698a918068f5345573d606b7f5bb
+    name: testchart
+    type: application
+    urls:
+    - https://github.com/MortyN/gitopsRepo/releases/download/testchart-0.1.7/testchart-0.1.7.tgz
+    version: 0.1.7
+generated: "2021-09-22T08:42:28.363364553Z"

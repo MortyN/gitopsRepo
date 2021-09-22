@@ -9,7 +9,7 @@ imagePullSecret: ""
 resources:
   requests:
     memory: 512Mi
-    cpu: 500m
+    cpu: 200m
 
 # upgrade strategy type (e.g. Recreate or RollingUpdate)
 strategyType: Recreate

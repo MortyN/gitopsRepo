@@ -1,40 +1,76 @@
 apiVersion: v1
 entries:
-  jenkins:
-  - annotations:
-      artifacthub.io/images: |
-        - name: jenkins
-          image: jenkins/jenkins:2.303.1-jdk11
-        - name: k8s-sidecar
-          image: kiwigrid/k8s-sidecar:0.1.275
-        - name: inbound-agent
-          image: jenkins/inbound-agent:4.6-1
-        - name: backup
-          image: maorfr/kube-tasks:0.2.0
-      artifacthub.io/links: |
-        - name: Chart Source
-          url: https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins
-        - name: Jenkins
-          url: https://www.jenkins.io/
-    apiVersion: v2
-    appVersion: 2.303.1
-    created: "2021-10-06T20:07:48.830790915Z"
-    description: Jenkins - Build great things at any scale! The leading open source
-      automation server, Jenkins provides hundreds of plugins to support building,
-      deploying and automating any project.
-    digest: 7875383d3c6910869157f92857b8c7e38cd711ab3afcfe69eb147676d184efee
-    home: https://jenkins.io/
-    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+  grafana:
+  - apiVersion: v2
+    created: "2021-10-06T20:13:13.095703517Z"
+    description: Prometheus network metrics, golang, grafana interface
+    digest: 1fc9f6ae5081388b4566a0cfe69a9b585a66ee3a442d6627c894b4db1543e94a
+    icon: https://helm.sh/img/helm.svg
     maintainers:
-    - email: morten.neteland@hotmail.com
+    - email: morten.neteland@hotmail.com.com
       name: Morten Neteland
-    name: jenkins
-    sources:
-    - https://github.com/jenkinsci/jenkins
-    - https://github.com/jenkinsci/docker-inbound-agent
-    - https://github.com/maorfr/kube-tasks
-    - https://github.com/jenkinsci/configuration-as-code-plugin
+    name: grafana
     urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/jenkins-0.0.1/jenkins-0.0.1.tgz
-    version: 0.0.1
-generated: "2021-10-06T20:07:48.830798115Z"
+    - https://github.com/MortyN/gitopsRepo/releases/download/grafana-0.0.2/grafana-0.0.2.tgz
+    version: 0.0.2
+  networkmon:
+  - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2021-10-06T20:13:13.292990537Z"
+    description: Prometheus network metrics, golang, grafana interface
+    digest: eb458fdb683e5d9ba9847d6746de6db42b320110a6062b34d84bcb36ed2e6ba3
+    icon: https://helm.sh/img/helm.svg
+    maintainers:
+    - email: morten.neteland@hotmail.com.com
+      name: Morten Neteland
+    name: networkmon
+    urls:
+    - https://github.com/MortyN/gitopsRepo/releases/download/networkmon-0.1.4/networkmon-0.1.4.tgz
+    version: 0.1.4
+  prometheus:
+  - apiVersion: v2
+    appVersion: 2.26.0
+    created: "2021-10-06T20:13:13.504882495Z"
+    dependencies:
+    - condition: kubeStateMetrics.enabled
+      name: kube-state-metrics
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 3.4.*
+    description: Prometheus is a monitoring system and time series database.
+    digest: 0a27dd820b9cdd93562365d5a5c7d4be38b3e7d6eca64db0fca4d1f89269e0af
+    home: https://prometheus.io/
+    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+    maintainers:
+    - email: gianrubio@gmail.com
+      name: gianrubio
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: miroslav.hadzhiev@gmail.com
+      name: Xtigyro
+    - email: monotek23@gmail.com
+      name: monotek
+    - email: naseem@transit.app
+      name: naseemkullah
+    name: prometheus
+    sources:
+    - https://github.com/prometheus/alertmanager
+    - https://github.com/prometheus/prometheus
+    - https://github.com/prometheus/pushgateway
+    - https://github.com/prometheus/node_exporter
+    - https://github.com/kubernetes/kube-state-metrics
+    type: application
+    urls:
+    - https://github.com/MortyN/gitopsRepo/releases/download/prometheus-14.6.1/prometheus-14.6.1.tgz
+    version: 14.6.1
+  testchart:
+  - apiVersion: v2
+    appVersion: 1.0.27
+    created: "2021-10-06T20:13:13.683934357Z"
+    description: A Helm chart for Kubernetes
+    digest: a94d62fbb253b7ab506999444898fd6201dd71bd104ec53526c29ed92ef5f7da
+    name: testchart
+    type: application
+    urls:
+    - https://github.com/MortyN/gitopsRepo/releases/download/testchart-0.1.8/testchart-0.1.8.tgz
+    version: 0.1.8
+generated: "2021-10-06T20:13:13.683940757Z"

@@ -1,76 +1,17 @@
 apiVersion: v1
 entries:
-  grafana:
+  minecraftaandb:
   - apiVersion: v2
-    created: "2021-10-06T20:13:13.095703517Z"
-    description: Prometheus network metrics, golang, grafana interface
-    digest: 1fc9f6ae5081388b4566a0cfe69a9b585a66ee3a442d6627c894b4db1543e94a
+    appVersion: 1.0.0
+    created: "2021-11-11T21:46:09.769307398Z"
+    description: Minecraft above and beyond server
+    digest: 3da1123cc42db90382db9ad76b524f8798a5516ab6c0ae0193f4181ef51dd1cf
     icon: https://helm.sh/img/helm.svg
     maintainers:
     - email: morten.neteland@hotmail.com.com
       name: Morten Neteland
-    name: grafana
+    name: minecraftaandb
     urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/grafana-0.0.2/grafana-0.0.2.tgz
-    version: 0.0.2
-  networkmon:
-  - apiVersion: v2
-    appVersion: 1.5.0
-    created: "2021-10-06T20:13:13.292990537Z"
-    description: Prometheus network metrics, golang, grafana interface
-    digest: eb458fdb683e5d9ba9847d6746de6db42b320110a6062b34d84bcb36ed2e6ba3
-    icon: https://helm.sh/img/helm.svg
-    maintainers:
-    - email: morten.neteland@hotmail.com.com
-      name: Morten Neteland
-    name: networkmon
-    urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/networkmon-0.1.4/networkmon-0.1.4.tgz
-    version: 0.1.4
-  prometheus:
-  - apiVersion: v2
-    appVersion: 2.26.0
-    created: "2021-10-06T20:13:13.504882495Z"
-    dependencies:
-    - condition: kubeStateMetrics.enabled
-      name: kube-state-metrics
-      repository: https://prometheus-community.github.io/helm-charts
-      version: 3.4.*
-    description: Prometheus is a monitoring system and time series database.
-    digest: 0a27dd820b9cdd93562365d5a5c7d4be38b3e7d6eca64db0fca4d1f89269e0af
-    home: https://prometheus.io/
-    icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
-    maintainers:
-    - email: gianrubio@gmail.com
-      name: gianrubio
-    - email: zanhsieh@gmail.com
-      name: zanhsieh
-    - email: miroslav.hadzhiev@gmail.com
-      name: Xtigyro
-    - email: monotek23@gmail.com
-      name: monotek
-    - email: naseem@transit.app
-      name: naseemkullah
-    name: prometheus
-    sources:
-    - https://github.com/prometheus/alertmanager
-    - https://github.com/prometheus/prometheus
-    - https://github.com/prometheus/pushgateway
-    - https://github.com/prometheus/node_exporter
-    - https://github.com/kubernetes/kube-state-metrics
-    type: application
-    urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/prometheus-14.6.1/prometheus-14.6.1.tgz
-    version: 14.6.1
-  testchart:
-  - apiVersion: v2
-    appVersion: 1.0.27
-    created: "2021-10-06T20:13:13.683934357Z"
-    description: A Helm chart for Kubernetes
-    digest: a94d62fbb253b7ab506999444898fd6201dd71bd104ec53526c29ed92ef5f7da
-    name: testchart
-    type: application
-    urls:
-    - https://github.com/MortyN/gitopsRepo/releases/download/testchart-0.1.8/testchart-0.1.8.tgz
-    version: 0.1.8
-generated: "2021-10-06T20:13:13.683940757Z"
+    - https://github.com/MortyN/gitopsRepo/releases/download/minecraftaandb-0.0.1/minecraftaandb-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-11-11T21:46:09.459910764Z"

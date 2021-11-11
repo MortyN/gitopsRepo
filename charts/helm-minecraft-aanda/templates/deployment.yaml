@@ -19,12 +19,9 @@ spec:
       - name: minecraftaandb
         image: "{{ .Values.imageRepository }}:{{ default "latest" .Values.imageTag }}"
         resources:
-          requests:
-            memory: "1000mi"
-            cpu: "250m"
           limits:
-            memory: "3000Mi"
-            cpu: "2000m"
+            memory: "1000Mi"
+            cpu: "1000m"
 
 ---
 apiVersion: v1
@@ -39,4 +36,4 @@ spec:
   ports:
   - port: 25565
     targetPort: 25565
-    nodePort: 29965
+    nodePort: 32556
